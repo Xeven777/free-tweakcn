@@ -41,7 +41,7 @@ const navbarItems = [
 ];
 
 export function Header({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: HeaderProps) {
-  const { stargazersCount } = useGithubStars("jnsahaj", "tweakcn");
+  const { stargazersCount } = useGithubStars("xeven777", "free-tweakcn");
 
   const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -92,7 +92,7 @@ export function Header({ isScrolled, mobileMenuOpen, setMobileMenuOpen }: Header
           >
             <Button variant="ghost" asChild>
               <a
-                href="https://github.com/jnsahaj/tweakcn"
+                href="https://github.com/xeven777/free-tweakcn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold"

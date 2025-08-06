@@ -4,8 +4,8 @@ import Logo from "@/assets/logo.svg";
 import { UserProfileDropdown } from "@/components/user-profile-dropdown";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { Gem } from "lucide-react";
 export function Header() {
-  // const { stargazersCount } = useGithubStars("jnsahaj", "tweakcn");
 
   return (
     <header className="border-b">
@@ -17,8 +17,10 @@ export function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-5">
-          <Button className="bg-primary/15 hover:bg-primary/30 text-primary">
+          <Button className="bg-primary/10 hover:bg-primary/25 text-primary">
+            <Gem className="mr-1 size-4" />
             Enjoy Unlimited
+            <Gem className="ml-1 size-4" />
           </Button>
 
           <UserProfileDropdown />

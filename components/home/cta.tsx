@@ -56,7 +56,7 @@ export function CTA() {
                 <ArrowRight className="ml-2 size-4" />
               </Button>
             </Link>
-            <Link href="https://github.com/jnsahaj/tweakcn">
+            <Link href="https://github.com/xeven777/free-tweakcn">
               <Button
                 size="lg"
                 variant="outline"

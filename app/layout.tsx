@@ -10,6 +10,11 @@ import type { Metadata, Viewport } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Beautiful themes for shadcn/ui — FreeTweakcn | Theme Editor & Generator",
@@ -81,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="darkreader-lock" />
       </head>
-      <body className="">
+      <body className={inter.className}>
         <NuqsAdapter>
           <Suspense>
             <QueryProvider>
