@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Check, Copy } from "lucide-react";
-import { usePostHog } from "posthog-js/react";
 import TabsTriggerPill from "../../theme-preview/tabs-trigger-pill";
 
 interface MCPDialogProps {
@@ -31,11 +30,9 @@ const mcpConfig = {
 
 export function MCPDialog({ open, onOpenChange }: MCPDialogProps) {
   const { hasCopied, copyToClipboard } = useCopyToClipboard();
-  const posthog = usePostHog();
 
   const handleCopy = async (config: typeof mcpConfig) => {
     copyToClipboard(JSON.stringify(config, null, 2));
-    posthog.capture("COPY_MCP_SETUP");
   };
 
   return (

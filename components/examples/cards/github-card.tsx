@@ -19,7 +19,7 @@ export function GithubCard() {
             </CardDescription>
           </div>
           <div className="bg-secondary text-secondary-foreground flex min-w-20 shrink-0 items-center space-x-1 rounded-md">
-            <Link href="https://github.com/jnsahaj/tweakcn">
+            <Link href="https://github.com/xeven777/free-tweakcn">
               <Button variant="secondary" className="flex items-center gap-2 px-3 shadow-none">
                 <Star />
                 Star

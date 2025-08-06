@@ -28,7 +28,7 @@ async function getCurrentUserId(): Promise<string> {
 function logError(error: Error, context: Record<string, unknown>) {
   console.error("Theme action error:", error, context);
 
-  // TODO: Add server-side error reporting to PostHog or your preferred service
+  // TODO: Add server-side error reporting if needed
   // For production, you'd want to send critical errors to an external service
   if (error.name === "UnauthorizedError" || error.name === "ValidationError") {
     // These are expected errors, log but don't report

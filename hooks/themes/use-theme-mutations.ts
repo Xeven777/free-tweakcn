@@ -4,23 +4,10 @@ import { themeKeys } from "./use-themes-data";
 import { ThemeStyles, Theme } from "@/types/theme";
 import { toast } from "@/components/ui/use-toast";
 import { useThemePresetStore } from "@/store/theme-preset-store";
-import posthog from "posthog-js";
 import { useRouter } from "next/navigation";
 
 function handleMutationError(error: Error, operation: string) {
   console.error(`Theme ${operation} error:`, error);
-
-  if (error.name !== "UnauthorizedError" && error.name !== "ValidationError") {
-    try {
-      posthog.capture("theme_mutation_error", {
-        operation,
-        error: error.message,
-        errorName: error.name,
-      });
-    } catch (posthogError) {
-      console.error("Failed to log to PostHog:", posthogError);
-    }
-  }
 
   const getErrorMessage = (error: Error) => {
     switch (error.name) {

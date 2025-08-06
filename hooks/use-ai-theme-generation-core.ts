@@ -4,7 +4,6 @@ import { ChatMessage } from "@/types/ai";
 import { ApiError } from "@/types/errors";
 import { ThemeStyles } from "@/types/theme";
 import { useQueryClient } from "@tanstack/react-query";
-import { usePostHog } from "posthog-js/react";
 import { SUBSCRIPTION_STATUS_QUERY_KEY } from "./use-subscription";
 
 type AIThemeGenerationResult =
@@ -15,20 +14,11 @@ export function useAIThemeGenerationCore() {
   const generateTheme = useAIThemeGenerationStore((state) => state.generateTheme);
   const loading = useAIThemeGenerationStore((state) => state.loading);
   const cancelThemeGeneration = useAIThemeGenerationStore((state) => state.cancelThemeGeneration);
-  const posthog = usePostHog();
   const queryClient = useQueryClient();
 
   const generateThemeCore = async (messages: ChatMessage[]): Promise<AIThemeGenerationResult> => {
     try {
       const result = await generateTheme(messages);
-
-      const lastUserMessage = messages.filter((m) => m.role === "user").pop();
-      posthog.capture("AI_GENERATE_THEME", {
-        prompt: lastUserMessage?.promptData?.content,
-        includesImage:
-          lastUserMessage?.promptData?.images && lastUserMessage.promptData.images.length > 0,
-        imageCount: lastUserMessage?.promptData?.images?.length,
-      });
 
       toast({
         title: "Theme generated",

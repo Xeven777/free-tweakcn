@@ -11,7 +11,6 @@ import { useAuthStore } from "@/store/auth-store";
 import { useEditorStore } from "@/store/editor-store";
 import { useThemePresetStore } from "@/store/theme-preset-store";
 import { parseCssInput } from "@/utils/parse-css-input";
-import { usePostHog } from "posthog-js/react";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface DialogActionsContextType {
@@ -45,7 +44,6 @@ function useDialogActionsStore(): DialogActionsContextType {
   const [shareAfterSave, setShareAfterSave] = useState(false);
   const [shareDialogOpen, setShareDialogOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
-  const [dialogKey, setDialogKey] = useState(0);
 
   const { themeState, setThemeState, applyThemePreset, hasThemeChangedFromCheckpoint } =
     useEditorStore();
@@ -54,7 +52,6 @@ function useDialogActionsStore(): DialogActionsContextType {
   const { openAuthDialog } = useAuthStore();
   const createThemeMutation = useCreateTheme();
   const { loading: aiGenerateLoading } = useAIThemeGenerationCore();
-  const posthog = usePostHog();
 
   usePostLoginAction("SAVE_THEME", () => {
     setSaveDialogOpen(true);
@@ -104,10 +101,6 @@ function useDialogActionsStore(): DialogActionsContextType {
 
     try {
       const theme = await createThemeMutation.mutateAsync(themeData);
-      posthog.capture("CREATE_THEME", {
-        theme_id: theme?.id,
-        theme_name: theme?.name,
-      });
       if (!theme) return;
       applyThemePreset(theme?.id || themeState.preset || "default");
       if (shareAfterSave) {
@@ -139,12 +132,6 @@ function useDialogActionsStore(): DialogActionsContextType {
 
     const isSavedPreset = !!currentPreset && currentPreset.source === "SAVED";
 
-    posthog.capture("SHARE_THEME", {
-      theme_id: id,
-      theme_name: currentPreset?.label,
-      is_saved: isSavedPreset,
-    });
-
     const url = isSavedPreset
       ? `https://free-tweakcn.vercel.app/themes/${id}`
       : `https://free-tweakcn.vercel.app/editor/theme?theme=${id}`;
@@ -160,7 +147,7 @@ function useDialogActionsStore(): DialogActionsContextType {
     saveDialogOpen,
     shareDialogOpen,
     shareUrl,
-    dialogKey,
+    dialogKey: 0, // This can be used to force re-render dialogs if needed
     isCreatingTheme: createThemeMutation.isPending,
     aiGenerateLoading,
 

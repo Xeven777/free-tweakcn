@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Logo from "@/assets/logo.svg";
 import GitHubIcon from "@/assets/github.svg";
-import TwitterIcon from "@/assets/twitter.svg";
-import DiscordIcon from "@/assets/discord.svg";
 
 export function Footer() {
   return (
@@ -20,25 +18,11 @@ export function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/jnsahaj/tweakcn"
+                href="https://github.com/xeven777/free-tweakcn"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <GitHubIcon className="size-5" />
                 <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="https://discord.gg/Phs4u2NM3n"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <DiscordIcon className="size-5" />
-                <span className="sr-only">Discord</span>
-              </a>
-              <a
-                href="https://x.com/iamsahaj_xyz"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <TwitterIcon className="size-5" />
-                <span className="sr-only">Twitter</span>
               </a>
             </div>
           </div>
@@ -76,7 +60,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://github.com/jnsahaj/tweakcn"
+                  href="https://github.com/xeven777/free-tweakcn"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   GitHub

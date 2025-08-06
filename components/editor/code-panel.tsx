@@ -6,7 +6,6 @@ import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import { ColorFormat } from "../../types";
 import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from "../ui/select";
-import { usePostHog } from "posthog-js/react";
 import { useEditorStore } from "@/store/editor-store";
 import { usePreferencesStore } from "@/store/preferences-store";
 import { generateThemeCode, generateTailwindConfigCode } from "@/utils/theme-style-generator";
@@ -20,7 +19,6 @@ interface CodePanelProps {
 const CodePanel: React.FC<CodePanelProps> = ({ themeEditorState }) => {
   const [registryCopied, setRegistryCopied] = useState(false);
   const [copied, setCopied] = useState(false);
-  const posthog = usePostHog();
   const { handleSaveClick } = useDialogActions();
 
   const preset = useEditorStore((state) => state.themeState.preset);
@@ -61,19 +59,9 @@ const CodePanel: React.FC<CodePanelProps> = ({ themeEditorState }) => {
       await navigator.clipboard.writeText(getRegistryCommand(preset ?? "default"));
       setRegistryCopied(true);
       setTimeout(() => setRegistryCopied(false), 2000);
-      captureCopyEvent("COPY_REGISTRY_COMMAND");
     } catch (err) {
       console.error("Failed to copy text:", err);
     }
-  };
-
-  const captureCopyEvent = (event: string) => {
-    posthog.capture(event, {
-      editorType: "theme",
-      preset,
-      colorFormat,
-      tailwindVersion,
-    });
   };
 
   const copyToClipboard = async (text: string) => {
@@ -81,7 +69,6 @@ const CodePanel: React.FC<CodePanelProps> = ({ themeEditorState }) => {
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-      captureCopyEvent("COPY_CODE");
     } catch (err) {
       console.error("Failed to copy text:", err);
     }

@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <ul className="text-muted-foreground list-inside list-disc space-y-2 pl-4">
           <li>
-            <strong>Web Analytics:</strong> Anonymous user data is collecting using PostHog.
+            <strong>Web Analytics:</strong> No user data is collected or tracked.
           </li>
           <li>
             <strong>Authentication Data:</strong> When you sign up, we collect necessary information
@@ -115,8 +115,8 @@ export default function PrivacyPolicyPage() {
         <h2 className="text-xl font-semibold">8. Contact Us</h2>
         <p className="text-muted-foreground">
           If you have any questions or concerns about this privacy policy, please reach out at{" "}
-          <a href="mailto:sahaj@tweakcn.com" className="text-primary hover:underline">
-            sahaj@tweakcn.com
+          <a href="mailto:anish7biswas@gmail.com" className="text-primary hover:underline">
+            anish7biswas@gmail.com
           </a>
         </p>
       </section>

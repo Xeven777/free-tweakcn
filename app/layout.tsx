@@ -1,6 +1,5 @@
 import { AuthDialogWrapper } from "@/components/auth-dialog-wrapper";
 import { DynamicFontLoader } from "@/components/dynamic-font-loader";
-import { PostHogInit } from "@/components/posthog-init";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeScript } from "@/components/theme-script";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,11 +9,7 @@ import type { Metadata, Viewport } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Suspense } from "react";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-});
+import Clarity from "@/components/Clarity";
 
 export const metadata: Metadata = {
   title: "Beautiful themes for shadcn/ui — FreeTweakcn | Theme Editor & Generator",
@@ -85,8 +80,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <meta name="darkreader-lock" />
+        {process.env.NODE_ENV === "production" ? <Clarity /> : null}
       </head>
-      <body className={inter.className}>
+      <body>
         <NuqsAdapter>
           <Suspense>
             <QueryProvider>
@@ -100,7 +96,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </QueryProvider>
           </Suspense>
         </NuqsAdapter>
-        <PostHogInit />
       </body>
     </html>
   );

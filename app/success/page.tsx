@@ -57,7 +57,7 @@ export default function SuccessPage() {
           <NoiseEffect />
           <p className="text-muted-foreground w-full text-center text-sm">
             Need help?{" "}
-            <Link href="mailto:sahaj@tweakcn.com" className="text-primary hover:underline">
+            <Link href="mailto:anish7biswas@gmail.com" className="text-primary hover:underline">
               Contact us
             </Link>
           </p>

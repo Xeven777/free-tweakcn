@@ -1,18 +1,18 @@
-# Contributing to tweakcn.com
+# Contributing to free-tweakcn.vercel.app
 
-Thanks for your interest in contributing to tweakcn.com! We're excited to have you here.
+Thanks for your interest in contributing to free-tweakcn.vercel.app! We're excited to have you here.
 
-Please take a moment to review this document before submitting your first pull request. We also strongly recommend checking open [Issues](https://github.com/jnsahaj/tweakcn/issues) and [Pull Requests](https://github.com/jnsahaj/tweakcn/pulls) to see if someone else is working on something similar.
+Please take a moment to review this document before submitting your first pull request. We also strongly recommend checking open [Issues](https://github.com/xeven777/free-tweakcn/issues) and [Pull Requests](https://github.com/xeven777/free-tweakcn/pulls) to see if someone else is working on something similar.
 
 If you need any help or want to discuss ideas, feel free to join our community on [Discord](https://discord.com/invite/Phs4u2NM3n).
 
 ## About This Project
 
-tweakcn.com is a powerful Visual Theme Editor designed for Tailwind CSS & shadcn/ui components. Websites built with shadcn/ui often share a similar look; tweakcn helps you visually customize these components to make your projects stand out.
+free-tweakcn.vercel.app is a powerful Visual Theme Editor designed for Tailwind CSS & shadcn/ui components. Websites built with shadcn/ui often share a similar look; tweakcn helps you visually customize these components to make your projects stand out.
 
 ## Project Structure
 
-This repository contains the Next.js application for tweakcn.com. Here's a simplified overview of the project's directory structure:
+This repository contains the Next.js application for free-tweakcn.vercel.app. Here's a simplified overview of the project's directory structure:
 
 ```
 ├── actions/          # Next.js Server Actions
@@ -46,9 +46,9 @@ This repository contains the Next.js application for tweakcn.com. Here's a simpl
 
 Even if you don't plan to write code, there are many ways to contribute:
 
-- **Create an Issue:** If you find a bug, have an idea for a new feature, or want to suggest an improvement, please [create an issue on GitHub](https://github.com/jnsahaj/tweakcn/issues). This helps us track and prioritize feedback.
-- **Spread the Word:** If you like tweakcn.com, please share it with your friends, colleagues, and on social media. Helping grow the community makes the tool better for everyone.
-- **Use tweakcn.com:** The best feedback comes from real-world usage! As you use the editor, if you encounter any issues or have ideas for improvement, please let us know by creating an issue or reaching out on [Discord](https://discord.com/invite/Phs4u2NM3n).
+- **Create an Issue:** If you find a bug, have an idea for a new feature, or want to suggest an improvement, please [create an issue on GitHub](https://github.com/xeven777/free-tweakcn/issues). This helps us track and prioritize feedback.
+- **Spread the Word:** If you like free-tweakcn.vercel.app, please share it with your friends, colleagues, and on social media. Helping grow the community makes the tool better for everyone.
+- **Use free-tweakcn.vercel.app:** The best feedback comes from real-world usage! As you use the editor, if you encounter any issues or have ideas for improvement, please let us know by creating an issue or reaching out on [Discord](https://discord.com/invite/Phs4u2NM3n).
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ Even if you don't plan to write code, there are many ways to contribute:
 
 ### Installation
 
-1.  **Fork the Repository:** Start by creating your own copy of the [tweakcn repository](https://github.com/jnsahaj/tweakcn) on GitHub. Click the "Fork" button in the top-right corner.
+1.  **Fork the Repository:** Start by creating your own copy of the [tweakcn repository](https://github.com/xeven777/free-tweakcn) on GitHub. Click the "Fork" button in the top-right corner.
 
 2.  **Clone Your Fork:** Clone the repository you just forked to your local machine:
 
@@ -173,9 +173,9 @@ Once you've made your changes and tested them locally, follow these steps to sub
 
 4.  **Open a Pull Request (PR):**
 
-    - Go to the original [tweakcn repository](https://github.com/jnsahaj/tweakcn) on GitHub.
+    - Go to the original [tweakcn repository](https://github.com/xeven777/free-tweakcn) on GitHub.
     - You should see a prompt suggesting you create a Pull Request from your recently pushed branch. Click on it. If not, navigate to the "Pull requests" tab and click "New pull request".
-    - Ensure the base repository is `jnsahaj/tweakcn` and the base branch is `main` (or the appropriate target branch).
+    - Ensure the base repository is `xeven777/free-tweakcn` and the base branch is `main` (or the appropriate target branch).
     - Ensure the head repository is your fork and the compare branch is `your-descriptive-branch-name`.
     - **Write a Clear Description:** Fill out the pull request template (if one exists). Provide a clear title and a detailed description of the changes you've made. Explain _why_ you made the changes and link to any relevant GitHub Issues (e.g., "Closes #123").
 

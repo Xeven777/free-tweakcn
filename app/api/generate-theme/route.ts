@@ -13,7 +13,7 @@ const google = createGoogleGenerativeAI({
   apiKey: process.env.GOOGLE_API_KEY,
 });
 
-const model = google("gemini-2.5-pro");
+// const model = google("gemini-2.5-pro");
 
 const ratelimit = new Ratelimit({
   redis: kv,
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     const { messages } = requestSchema.parse(await req.json());
 
     const { experimental_output: result, usage } = await generateText({
-      model,
+      model: google("gemini-2.5-pro"),
       experimental_output: Output.object({
         schema: responseSchema,
       }),
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       providerOptions: {
         google: {
           thinkingConfig: {
-            thinkingBudget: 128,
+            thinkingBudget: 150,
           },
         } satisfies GoogleGenerativeAIProviderOptions,
       },

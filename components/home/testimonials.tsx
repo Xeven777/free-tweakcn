@@ -93,7 +93,7 @@ Grab  the CSS → drop into Bolt = cohesive design`,
     image: "https://pbs.twimg.com/profile_images/1903255064149442560/TYvinGL9_400x400.jpg",
     name: "Matt Silverlock 🐀",
     tag: "elithrar",
-    description: `used this shadcn theme editor to make it a little less plain: tweakcn.com`,
+    description: `used this shadcn theme editor to make it a little less plain: free-tweakcn.vercel.app`,
     href: "https://x.com/elithrar/status/1905704716589510889",
   },
 ];

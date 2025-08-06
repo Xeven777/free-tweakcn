@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "tweakcn-theme-registry",
-  "homepage": "http://tweakcn.com",
+  "homepage": "http://free-tweakcn.vercel.app",
   "items": [
     {
       "name": "modern-minimal",

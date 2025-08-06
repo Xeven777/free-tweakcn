@@ -3,23 +3,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { useState, ReactNode } from "react";
-import posthog from "posthog-js";
 
 function logClientError(error: Error, context: Record<string, unknown>) {
   console.error("Query error:", error, context);
-
-  if (error.name !== "UnauthorizedError" && error.name !== "ValidationError") {
-    try {
-      posthog.capture("query_error", {
-        error: error.message,
-        errorName: error.name,
-        stack: error.stack,
-        ...context,
-      });
-    } catch (posthogError) {
-      console.error("Failed to log to PostHog:", posthogError);
-    }
-  }
 }
 
 function createQueryClient() {

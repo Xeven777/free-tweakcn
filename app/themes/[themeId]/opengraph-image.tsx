@@ -10,11 +10,7 @@ export const size = {
 export const contentType = "image/png";
 
 // Dynamic route params
-export default async function Image({
-  params,
-}: {
-  params: { themeId: string };
-}) {
+export default async function Image({ params }: { params: { themeId: string } }) {
   const theme = await getTheme(params.themeId);
 
   // Set default colors if theme doesn't exist
@@ -57,7 +53,7 @@ export default async function Image({
               marginBottom: "10px",
             }}
           >
-            tweakcn.com
+            FreeTweakcn
           </div>
           <div
             style={{
