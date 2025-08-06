@@ -17,7 +17,7 @@ export function Header() {
           </Link>
         </div>
         <div className="flex items-center gap-5">
-          <Button className="bg-primary/15 hover:text-foreground text-primary">
+          <Button className="bg-primary/15 hover:bg-primary/30 text-primary">
             Enjoy Unlimited
           </Button>
 

@@ -131,7 +131,7 @@ body {
 }
 
 .animate-text {
-  animation: text 3s linear infinite;
+  animation: text 1.5s ease-in-out infinite;
 }
 
 @utility scrollbar-thin {
