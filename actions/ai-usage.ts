@@ -38,8 +38,8 @@ interface ChartDataPoint {
 
 // Constants
 const MODEL_CONFIG = {
-  id: "gemini-2.5-pro",
-  name: "Gemini 2.5 Pro",
+  id: "gemini-2.5-flash",
+  name: "Gemini 2.5 Flash",
 };
 
 export async function recordAIUsage(input: { promptTokens?: number; completionTokens?: number }) {
