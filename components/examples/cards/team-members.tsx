@@ -19,19 +19,19 @@ const teamMembers = [
   {
     name: "Sofia Davis",
     email: "m@example.com",
-    avatar: "/avatars/01.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar01?rounded=120&size=240",
     role: "Owner",
   },
   {
     name: "Jackson Lee",
     email: "p@example.com",
-    avatar: "/avatars/02.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar02?rounded=120&size=240",
     role: "Developer",
   },
   {
     name: "Isabella Nguyen",
     email: "i@example.com",
-    avatar: "/avatars/03.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar02?rounded=120&size=240",
     role: "Billing",
   },
 ];

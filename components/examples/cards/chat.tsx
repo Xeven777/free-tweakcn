@@ -30,27 +30,27 @@ const users = [
   {
     name: "Olivia Martin",
     email: "m@example.com",
-    avatar: "/avatars/01.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar01?rounded=120&size=240",
   },
   {
     name: "Isabella Nguyen",
     email: "isabella.nguyen@email.com",
-    avatar: "/avatars/03.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar03?rounded=120&size=240",
   },
   {
     name: "Emma Wilson",
     email: "emma@example.com",
-    avatar: "/avatars/05.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar04?rounded=120&size=240",
   },
   {
     name: "Jackson Lee",
     email: "lee@example.com",
-    avatar: "/avatars/02.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar02?rounded=120&size=240",
   },
   {
     name: "William Kim",
     email: "will@email.com",
-    avatar: "/avatars/04.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar04?rounded=120&size=240",
   },
 ] as const;
 
