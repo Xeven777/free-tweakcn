@@ -7,7 +7,5 @@ export const ALL_FEATURES = [
   "Export theme via Shadcn Registry Command",
   "Contrast checker",
   "Generate themes from images using AI",
-  "Figma export integration",
-  "Priority support",
   "All future features included",
 ];

@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     title: "Beautiful themes for shadcn/ui — tweakcn | Theme Editor & Generator",
     description:
       "Customize theme for shadcn/ui with tweakcn's interactive editor. Supports Tailwind CSS v4, Shadcn UI, and custom styles. Modify properties, preview changes, and get the code in real time.",
-    url: "https://tweakcn.com/",
+    url: "https://free-tweakcn.vercel.app/",
     siteName: "tweakcn",
     images: [
       {
-        url: "https://tweakcn.com/og-image.v050725.png",
+        url: "https://free-tweakcn.vercel.app/og-image.v050725.png",
         width: 1200,
         height: 630,
       },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Beautiful themes for shadcn/ui — tweakcn | Theme Editor & Generator",
     description:
       "Customize theme for shadcn/ui with tweakcn's interactive editor. Supports Tailwind CSS v4, Shadcn UI, and custom styles. Modify properties, preview changes, and get the code in real time.",
-    images: ["https://tweakcn.com/og-image.v050725.png"],
+    images: ["https://free-tweakcn.vercel.app/og-image.v050725.png"],
   },
   robots: "index, follow",
 };
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="darkreader-lock" />
       </head>
-      <body>
+      <body className="">
         <NuqsAdapter>
           <Suspense>
             <QueryProvider>

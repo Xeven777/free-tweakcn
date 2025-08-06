@@ -12,7 +12,6 @@ import { useAIChatStore } from "@/store/ai-chat-store";
 import { AIPromptData } from "@/types/ai";
 import { ArrowUp, Loader, Plus, StopCircle } from "lucide-react";
 import { AIChatFormBody } from "./ai-chat-form-body";
-import { AlertBanner } from "./alert-banner";
 import { ImageUploader } from "./image-uploader";
 type ThemeGenerationPayload = {
   promptData: AIPromptData | null;
@@ -91,7 +90,6 @@ export function ChatInput({
 
   return (
     <div className="relative transition-all contain-layout">
-      <AlertBanner />
       <div className="bg-background relative isolate z-10 flex size-full min-h-[100px] flex-1 flex-col gap-2 overflow-hidden rounded-lg border p-2 shadow-xs">
         <AIChatFormBody
           isUserDragging={isUserDragging}

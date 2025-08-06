@@ -14,7 +14,7 @@
 
 <br />
 
-**[Free Tweakcn](https://tweakcn.com)** is a powerful Visual Theme Editor for tailwind CSS & shadcn/ui components. All features are now completely free for everyone—no paywalls, no limits, no subscriptions. Enjoy beautiful theme presets and advanced customization for every aspect of your UI.
+**[Free Tweakcn](https://free-tweakcn.vercel.app/)** is a powerful Visual Theme Editor for tailwind CSS & shadcn/ui components. All features are now completely free for everyone—no paywalls, no limits, no subscriptions. Enjoy beautiful theme presets and advanced customization for every aspect of your UI.
 
 ![tweakcn.com](public/og-image.v050725.png)
 
@@ -34,7 +34,7 @@ Websites made with shadcn/ui famously look the same. Free Tweakcn helps you cust
 - Priority support
 - All future features included
 
-See the full feature list at: https://tweakcn.com/#features
+See the full feature list at: https://free-tweakcn.vercel.app/#features
 
 
 ## Run Locally

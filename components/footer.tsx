@@ -12,7 +12,7 @@ export function Footer() {
           <div className="col-span-2 max-w-md space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold">
               <Logo className="size-6" />
-              <span>tweakcn</span>
+              <span>FreeTweakcn</span>
             </Link>
             <p className="text-muted-foreground text-sm">
               A powerful visual theme editor for shadcn/ui components with Tailwind CSS support.

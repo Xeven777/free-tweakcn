@@ -72,7 +72,7 @@ export function ThemeCard({ theme, className }: ThemeCardProps) {
   };
 
   const handleShare = () => {
-    const url = `https://tweakcn.com/themes/${theme.id}`;
+    const url = `https://free-tweakcn.vercel.app/themes/${theme.id}`;
     navigator.clipboard.writeText(url);
     toast({
       title: "Theme URL copied to clipboard!",
@@ -180,7 +180,9 @@ export function ThemeCard({ theme, className }: ThemeCardProps) {
       <AlertDialog open={showDeleteDialog} onOpenChange={setShowDeleteDialog}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure you want to delete your {theme.name} theme?</AlertDialogTitle>
+            <AlertDialogTitle>
+              Are you sure you want to delete your {theme.name} theme?
+            </AlertDialogTitle>
             <AlertDialogDescription>
               This action cannot be undone. This will permanently delete your theme.
             </AlertDialogDescription>
@@ -194,11 +196,11 @@ export function ThemeCard({ theme, className }: ThemeCardProps) {
             >
               {deleteThemeMutation.isPending ? (
                 <>
-                  <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Deleting...
                 </>
               ) : (
-                'Delete'
+                "Delete"
               )}
             </AlertDialogAction>
           </AlertDialogFooter>

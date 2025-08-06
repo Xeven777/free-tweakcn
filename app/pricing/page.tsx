@@ -30,7 +30,7 @@ export default function PricingPage() {
       <div className="relative container mx-auto space-y-28 px-4 py-20 md:px-6">
         {/* Header Section */}
         <section className="space-y-2 text-center">
-          <h1 className="from-foreground to-foreground/50 bg-gradient-to-r bg-clip-text text-5xl font-bold tracking-tight text-pretty text-transparent md:text-6xl">
+          <h1 className="from-foreground to-foreground/50 bg-gradient-to-r bg-clip-text text-5xl font-bold tracking-tight text-pretty text-transparent md:text-6xl py-2">
             Everything is Free!
           </h1>
           <p className="text-muted-foreground mx-auto max-w-3xl text-base text-balance md:text-lg">

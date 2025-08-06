@@ -1,7 +1,6 @@
 "use client";
 
 import { AIChatFormBody } from "@/components/editor/ai/ai-chat-form-body";
-import { AlertBanner } from "@/components/editor/ai/alert-banner";
 import { ImageUploader } from "@/components/editor/ai/image-uploader";
 import ThemePresetSelect from "@/components/editor/theme-preset-select";
 import { Button } from "@/components/ui/button";
@@ -56,8 +55,6 @@ export function AIChatForm({
 
   return (
     <div className="@container/form relative transition-all contain-layout">
-      <AlertBanner />
-
       <div className="bg-background relative z-10 flex size-full min-h-[100px] flex-1 flex-col gap-2 overflow-hidden rounded-lg border p-2 shadow-xs">
         <AIChatFormBody
           isUserDragging={isUserDragging}
