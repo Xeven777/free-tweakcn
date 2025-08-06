@@ -90,10 +90,10 @@ export default function PricingPage() {
                 <NoiseEffect />
 
                 <div className="flex items-center gap-3">
-                  <CardTitle className="text-4xl font-medium">Pro</CardTitle>
+                  <CardTitle className="text-4xl font-medium">Pro (also Free)</CardTitle>
                 </div>
                 <div className="flex items-baseline">
-                  <span className="text-4xl font-bold tracking-tight lg:text-5xl">$8</span>
+                  <span className="text-4xl font-bold tracking-tight lg:text-5xl">$0</span>
                   <span className="text-muted-foreground text-lg">/month</span>
                 </div>
                 <p className="text-muted-foreground text-sm">Billed monthly • Cancel anytime</p>

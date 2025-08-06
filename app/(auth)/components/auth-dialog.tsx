@@ -14,6 +14,7 @@ import {
 import { authClient } from "@/lib/auth-client";
 import Google from "@/assets/google.svg";
 import Github from "@/assets/github.svg";
+import { toast } from "sonner";
 
 interface AuthDialogProps {
   open: boolean;
@@ -55,7 +56,7 @@ export function AuthDialog({
       });
     } catch (error) {
       console.error("Google Sign In Error:", error);
-      // Handle error appropriately (e.g., show a toast notification)
+      toast.error("Failed to sign in with Google. Please try again.");
     }
   };
 
@@ -68,7 +69,7 @@ export function AuthDialog({
       });
     } catch (error) {
       console.error("GitHub Sign In Error:", error);
-      // Handle error appropriately
+      toast.error("Failed to sign in with GitHub. Please try again.");
     }
   };
 
@@ -124,7 +125,7 @@ export function AuthDialog({
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-muted text-muted-foreground px-2">
+                <span className="bg-muted/30 text-muted-foreground rounded-full border px-3 py-px backdrop-blur">
                   {isSignIn ? "New to tweakcn?" : "Already have an account?"}
                 </span>
               </div>

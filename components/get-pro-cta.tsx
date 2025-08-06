@@ -26,9 +26,9 @@ export function GetProCTA({ className, ...props }: GetProCTAProps) {
       asChild
       {...props}
     >
-      <Link href="/pricing">
+      <Link href="#">
         <Gem />
-        Get Pro
+        Enjoy
       </Link>
     </Button>
   );

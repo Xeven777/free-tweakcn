@@ -19,6 +19,5 @@ export const PRO_SUB_FEATURES: Feature[] = [
   { description: "Save and share unlimited themes", status: "done" },
   { description: "Unlimited AI generated themes", status: "done" },
   { description: "Generate themes from images using AI", status: "done" },
-  { description: "Priority support", status: "done" },
   { description: "Save your own fonts and colors", status: "pending" },
 ];
