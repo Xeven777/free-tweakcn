@@ -6,8 +6,6 @@ import { toast } from "@/components/ui/use-toast";
 import { useThemePresetStore } from "@/store/theme-preset-store";
 import posthog from "posthog-js";
 import { useRouter } from "next/navigation";
-import { useGetProDialogStore } from "@/store/get-pro-dialog-store";
-import { MAX_FREE_THEMES } from "@/lib/constants";
 
 function handleMutationError(error: Error, operation: string) {
   console.error(`Theme ${operation} error:`, error);
@@ -51,16 +49,9 @@ function handleMutationError(error: Error, operation: string) {
 export function useCreateTheme() {
   const queryClient = useQueryClient();
   const { registerPreset } = useThemePresetStore();
-  const { openGetProDialog } = useGetProDialogStore();
 
   return useMutation({
     mutationFn: (data: { name: string; styles: ThemeStyles }) => createTheme(data),
-    retry(failureCount, error) {
-      if (error.name === "ThemeLimitError") {
-        return false;
-      }
-      return failureCount < 3;
-    },
     onSuccess: (data) => {
       queryClient.setQueryData(themeKeys.lists(), (old: Theme[] | undefined) => {
         return old ? [...old, data] : [data];
@@ -79,16 +70,7 @@ export function useCreateTheme() {
       });
     },
     onError: (error) => {
-      if (error.name === "ThemeLimitError") {
-        toast({
-          title: "Theme limit reached",
-          description: `You have reached the limit of ${MAX_FREE_THEMES} themes.`,
-          variant: "destructive",
-        });
-        openGetProDialog();
-      } else {
-        handleMutationError(error as Error, "create");
-      }
+      handleMutationError(error as Error, "create");
     },
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: themeKeys.lists() });
@@ -153,7 +135,7 @@ export function useUpdateTheme() {
       }
       handleMutationError(error as Error, "update");
     },
-    onSettled: (data, error, variables) => {
+    onSettled: (_data, _error, variables) => {
       queryClient.invalidateQueries({ queryKey: themeKeys.lists() });
       queryClient.invalidateQueries({ queryKey: themeKeys.detail(variables.id) });
     },

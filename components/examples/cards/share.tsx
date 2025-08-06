@@ -18,22 +18,22 @@ const people = [
   {
     name: "Olivia Martin",
     email: "m@example.com",
-    avatar: "/avatars/03.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar01?rounded=120&size=240",
   },
   {
     name: "Isabella Nguyen",
     email: "b@example.com",
-    avatar: "/avatars/04.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar02?rounded=120&size=240",
   },
   {
     name: "Sofia Davis",
     email: "p@example.com",
-    avatar: "/avatars/05.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar03?rounded=120&size=240",
   },
   {
     name: "Ethan Thompson",
     email: "e@example.com",
-    avatar: "/avatars/01.png",
+    avatar: "https://xvatar.vercel.app/api/avatar/avatar04?rounded=120&size=240",
   },
 ];
 export function CardsShare() {

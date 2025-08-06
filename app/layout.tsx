@@ -1,6 +1,5 @@
 import { AuthDialogWrapper } from "@/components/auth-dialog-wrapper";
 import { DynamicFontLoader } from "@/components/dynamic-font-loader";
-import { GetProDialogWrapper } from "@/components/get-pro-dialog-wrapper";
 import { PostHogInit } from "@/components/posthog-init";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeScript } from "@/components/theme-script";
@@ -13,12 +12,17 @@ import { Suspense } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Beautiful themes for shadcn/ui — tweakcn | Theme Editor & Generator",
+  title: "Beautiful themes for shadcn/ui — FreeTweakcn | Theme Editor & Generator",
   description:
     "Customize theme for shadcn/ui with tweakcn's interactive editor. Supports Tailwind CSS v4, Shadcn UI, and custom styles. Modify properties, preview changes, and get the code in real time.",
   keywords:
     "theme editor, theme generator, shadcn, ui, components, react, tailwind, button, editor, visual editor, component editor, web development, frontend, design system, UI components, React components, Tailwind CSS, shadcn/ui themes",
-  authors: [{ name: "Sahaj Jain" }],
+  authors: [
+    { name: "Sahaj Jain" },
+    {
+      name: "Anish Biswas",
+    },
+  ],
   openGraph: {
     title: "Beautiful themes for shadcn/ui — tweakcn | Theme Editor & Generator",
     description:
@@ -84,7 +88,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ThemeProvider defaultTheme="light">
                 <TooltipProvider>
                   <AuthDialogWrapper />
-                  <GetProDialogWrapper />
                   <Toaster />
                   {children}
                 </TooltipProvider>

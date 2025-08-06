@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { BrainCircuit, Code, Contrast, FileCode, Gem, Layers, Paintbrush } from "lucide-react";
+import { BrainCircuit, Code, Contrast, FileCode, Layers, Paintbrush } from "lucide-react";
 import { motion } from "motion/react";
 
 const features = [
@@ -38,7 +38,6 @@ const features = [
     description:
       "Create stunning, ready-to-use themes in seconds. Just provide an image or a text prompt, and our AI does the rest.",
     icon: <BrainCircuit className="size-5" />,
-    pro: true,
   },
 ];
 
@@ -103,15 +102,7 @@ export function Features() {
                   <div className="bg-primary/10 text-primary group-hover:bg-primary/20 mb-4 flex size-12 items-center justify-center rounded-full transition-colors duration-300">
                     {feature.icon}
                   </div>
-                  <h3 className="mb-2 flex items-center gap-2 text-xl font-bold">
-                    {feature.title}
-                    {feature.pro && (
-                      <span className="bg-muted text-muted-foreground inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-semibold">
-                        <Gem className="size-3" />
-                        Pro
-                      </span>
-                    )}
-                  </h3>
+                  <h3 className="mb-2 text-xl font-bold">{feature.title}</h3>
                   <p className="text-muted-foreground text-pretty">{feature.description}</p>
                 </CardContent>
               </Card>

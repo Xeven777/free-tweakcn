@@ -1,18 +1,16 @@
 import { getCurrentUserId, logError } from "@/lib/shared";
-import { validateSubscriptionAndUsage } from "@/lib/subscription";
 import { SubscriptionStatus } from "@/types/subscription";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
   try {
-    const userId = await getCurrentUserId(request);
-    const { isSubscribed, requestsRemaining, requestsUsed } =
-      await validateSubscriptionAndUsage(userId);
+    await getCurrentUserId(request); // Still validate auth but don't use the result
 
+    // Always return unlimited access - no subscription required
     const response: SubscriptionStatus = {
-      isSubscribed,
-      requestsRemaining,
-      requestsUsed,
+      isSubscribed: true, // Treat everyone as subscribed
+      requestsRemaining: Infinity,
+      requestsUsed: 0,
     };
 
     return NextResponse.json(response);

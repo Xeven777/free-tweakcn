@@ -9,14 +9,7 @@ import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { themeStylesSchema, type ThemeStyles } from "@/types/theme";
 import { cache } from "react";
-import {
-  UnauthorizedError,
-  ValidationError,
-  ThemeNotFoundError,
-  ThemeLimitError,
-} from "@/types/errors";
-import { MAX_FREE_THEMES } from "@/lib/constants";
-import { getMyActiveSubscription } from "@/lib/subscription";
+import { UnauthorizedError, ValidationError, ThemeNotFoundError } from "@/types/errors";
 
 // Helper to get user ID with better error handling
 async function getCurrentUserId(): Promise<string> {
@@ -32,7 +25,7 @@ async function getCurrentUserId(): Promise<string> {
 }
 
 // Log errors for observability
-function logError(error: Error, context: Record<string, any>) {
+function logError(error: Error, context: Record<string, unknown>) {
   console.error("Theme action error:", error, context);
 
   // TODO: Add server-side error reporting to PostHog or your preferred service
@@ -95,20 +88,6 @@ export async function createTheme(formData: { name: string; styles: ThemeStyles 
     const validation = createThemeSchema.safeParse(formData);
     if (!validation.success) {
       throw new ValidationError("Invalid input", validation.error.format());
-    }
-
-    // Check theme limit
-    const userThemes = await db.select().from(themeTable).where(eq(themeTable.userId, userId));
-
-    if (userThemes.length >= MAX_FREE_THEMES) {
-      const activeSubscription = await getMyActiveSubscription(userId);
-      const isSubscribed =
-        !!activeSubscription &&
-        activeSubscription?.productId === process.env.NEXT_PUBLIC_TWEAKCN_PRO_PRODUCT_ID;
-
-      if (!isSubscribed) {
-        throw new ThemeLimitError(`You cannot have more than ${MAX_FREE_THEMES} themes.`);
-      }
     }
 
     const { name, styles } = validation.data;

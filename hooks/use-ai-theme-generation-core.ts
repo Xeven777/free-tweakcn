@@ -46,18 +46,11 @@ export function useAIThemeGenerationCore() {
           description: message,
         });
       } else if (error instanceof ApiError) {
-        if (error.code === "SUBSCRIPTION_REQUIRED") {
-          toast({
-            title: "Subscription required",
-            description: error.message,
-          });
-        } else {
-          toast({
-            title: "Error",
-            description: error.message,
-            variant: "destructive",
-          });
-        }
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
       } else {
         const description = error instanceof Error ? error.message : message;
         toast({

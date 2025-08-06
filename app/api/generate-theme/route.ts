@@ -1,8 +1,6 @@
 import { recordAIUsage } from "@/actions/ai-usage";
 import { handleError } from "@/lib/error-response";
-import { getCurrentUserId, logError } from "@/lib/shared";
-import { validateSubscriptionAndUsage } from "@/lib/subscription";
-import { SubscriptionRequiredError } from "@/types/errors";
+import { logError } from "@/lib/shared";
 import { requestSchema, responseSchema, SYSTEM_PROMPT } from "@/utils/ai/generate-theme";
 import { createGoogleGenerativeAI, GoogleGenerativeAIProviderOptions } from "@ai-sdk/google";
 import { Ratelimit } from "@upstash/ratelimit";
@@ -24,7 +22,6 @@ const ratelimit = new Ratelimit({
 
 export async function POST(req: NextRequest) {
   try {
-    const userId = await getCurrentUserId(req);
     const headersList = await headers();
 
     if (process.env.NODE_ENV !== "development") {
@@ -41,14 +38,6 @@ export async function POST(req: NextRequest) {
           },
         });
       }
-    }
-
-    const subscriptionCheck = await validateSubscriptionAndUsage(userId);
-
-    if (!subscriptionCheck.canProceed) {
-      throw new SubscriptionRequiredError(subscriptionCheck.error, {
-        requestsRemaining: subscriptionCheck.requestsRemaining,
-      });
     }
 
     const { messages } = requestSchema.parse(await req.json());

@@ -1,13 +1,7 @@
-import { polar } from "@/lib/polar";
-import { getCurrentUserId } from "@/lib/shared";
-import { CustomerPortal } from "@polar-sh/nextjs";
+import { NextRequest } from "next/server";
+import { redirect } from "next/navigation";
 
-export const GET = CustomerPortal({
-  accessToken: process.env.POLAR_ACCESS_TOKEN!,
-  server: process.env.NODE_ENV === "production" ? "production" : "sandbox",
-  getCustomerId: async (req) => {
-    const userId = await getCurrentUserId(req);
-    const customer = await polar.customers.getExternal({ externalId: userId });
-    return customer.id;
-  },
-});
+export async function GET(_req: NextRequest) {
+  // No more subscription management - redirect to settings
+  redirect("/settings");
+}
